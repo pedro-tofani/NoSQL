@@ -1,55 +1,55 @@
-## Desafios
+## Challenges
 
-Monte queries para encontrar as informações dos desafios a seguir.
+Build queries to find the information for the following challenges.
 
-##### Desafio 1
+##### Challenge 1
 
-Ajude a Trybe a escolher um filme para a próxima noite! Baseado em uma pesquisa, decidimos que os filmes em potencial devem atender aos seguintes critérios:
+Help Trybe choose a movie for the next night! Based on a survey, we decided that potential films must meet the following criteria:
 
-- `imdb.rating` deve ser ao menos `7`;
-- `genres` não deve conter `Crime` ou `Horror`;
-- `rated` deve ser igual a `PG` ou `G`;
-- `languages` contém `English` e `Spanish`.
+- `imdb.rating` must be at least `7`;
+- `genres` must not contain `Crime` or `Horror`;
+- `rated` must be equal to `PG` or `G`;
+- `languages` contains `English` and `Spanish`.
 
-Utilizando a coleção `movies`, faça um _pipeline_ que retorne todos esses filmes.
+Using the `movies` collection, make a _pipeline_ that returns all these movies.
 
-Sua query deve retornar `41` documentos.
+Your query should return `41` documents.
 
-##### Desafio 2
+##### Challenge 2
 
-A escolha do filme da noite foi um sucesso, mas infelizmente ficamos com nossa banda de internet quase esgotada, e ainda precisamos de uma nova recomendação de filme. Para diminuir o volume de dados trafegados, utilizando o mesmo _pipeline_ anterior, retorne apenas os campos `title`, `rated`, `imdb.rating`, `imdb.votes` e `year`, modificando seus nomes para `titulo`, `avaliado`, `notaIMDB`, `votosIMDB` e `ano`, respectivamente.
+The choice of movie of the night was a success, but unfortunately we were left with our internet bandwidth almost exhausted, and we still need a new movie recommendation. To reduce the volume of data trafficked, using the same _pipeline_ as before, return only the `title`, `rated`, `imdb.rating`, `imdb.votes` and `year` fields, changing their names to `title`, `rated`, `IMDB grade`, `IMDB votes` and `year`, respectively.
 
-O resultado da sua query deve ter o seguinte formato:
-
-```javascript
-{ "titulo" : "A Streetcar Named Desire", "avaliado" : "PG", "notaIMDB" : 8.1, "votosIMDB" : 72364, "ano" : 1951 }
-// Demais documentos
-```
-
-##### Desafio 3
-
-Agora que você tem os campos essenciais, retorne esses filmes ordenados por ano e nota IMDB de forma decrescente e por ordem alfabética.
-
-O resultado da sua query deve ter o seguinte formato:
+The result of your query should have the following format:
 
 ```javascript
-{ "titulo" : "McFarland, USA", "avaliado" : "PG", "notaIMDB" : 7.5, "votosIMDB" : 14091, "ano" : 2015 }
-// Demais documentos
+{ "title" : "A Streetcar Named Desire", "rated" : "PG", "IMDB rating" : 8.1, "IMDB votes" : 72364, "year" : 1951 }
+// Other documents
 ```
 
-##### Desafio 4
+##### Challenge 3
 
-Nosso dataset de filmes tem muitos documentos diferentes, alguns com títulos "mais complexos" do que outros. Se quisermos analisar nossa coleção para encontrar títulos de filmes que têm uma só palavra no título, poderíamos buscar todos os filmes do dataset e processar isso na aplicação, mas o `Aggregation Framework` nos permite fazer isso diretamente no lado do banco de dados.
+Now that you have the essential fields, return these movies sorted by year and IMDB rating in descending alphabetical order.
 
-Crie um _pipeline_ que retorne apenas os filmes com o título composto apenas de uma palavra. Por exemplo, `"Cinderela"` e `"3-25"` devem entrar nessa contagem, mas `"Cast Away"` não.
+The result of your query should have the following format:
 
-Dica: utilize os operadores `$split` e `$size` para te auxiliar.
+```javascript
+{ "title" : "McFarland, USA", "rated" : "PG", "IMDB rating" : 7.5, "IMDB votes" : 14091, "year" : 2015 }
+// Other documents
+```
 
-Sua query deve retornar `8068` documentos.
+##### Challenge 4
 
-##### Desafio 5
+Our movies dataset has many different documents, some with "more complex" titles than others. If we wanted to analyze our collection to find movie titles that have a single word in the title, we could fetch all the movies in the dataset and process that in the application, but the `Aggregation Framework` allows us to do this directly on the database side.
 
-Temos outra noite de filme aqui na Trybe e, desta vez, nós perguntamos à equipe quais são seus atores ou atrizes preferidos. Aqui está o resultado:
+Create a _pipeline_ that returns only movies with a single-word title. For example, `"Cinderella"` and `"3-25"` should go into this count, but `"Cast Away"` should not.
+
+Tip: use the `$split` and `$size` operators to help you.
+
+Your query should return `8068` documents.
+
+##### Challenge 5
+
+We have another movie night here at Trybe and this time we asked the crew who their favorite actors or actresses are. Here is the result:
 
 - Sandra Bullock
 - Tom Hanks
@@ -57,133 +57,133 @@ Temos outra noite de filme aqui na Trybe e, desta vez, nós perguntamos à equip
 - Kevin Spacey
 - George Clooney
 
-Para filmes lançados nos Estados Unidos (campo `countries`), com `tomatoes.viewer.rating` maior ou igual a `3`, crie um novo campo chamado `num_favs`, que represente quantos atores ou atrizes favoritos aparecem no elenco (campo `cast`) do filme.
+For movies released in the United States (`countries` field), with `tomatoes.viewer.rating` greater than or equal to `3`, create a new field called `num_favs`, which represents how many favorite actors or actresses appear in the cast (field `cast`) of the movie.
 
-Ordene os resultados por `num_favs`, `tomatoes.viewer.rating` e `title`, todos em ordem decrescente.
+Sort the results by `num_favs`, `tomatoes.viewer.rating` and `title`, all in descending order.
 
-Por fim, utilizando o mesmo _pipeline_, responda: Qual o **título** do vigésimo quinto filme do resultado dessa agregação?
+Finally, using the same _pipeline_, answer: What is the **title** of the twenty-fifth film of the result of this aggregation?
 
-Dica: coloque a lista de atores e atrizes favoritos em uma variável e explore operadores como `$size` e `$setIntersection`.
+Tip: put the list of favorite actors and actresses in a variable and explore operators like `$size` and `$setIntersection`.
 
-O resultado da sua query deve ter o seguinte formato:
+The result of your query should have the following format:
 
 ```javascript
-{ "title" : <nome_do_filme> }
+{ "title" : <movie_name> }
 ```
 
-##### Desafio 6
+##### Challenge 6
 
-Vamos explorar mais operadores aritméticos!
+Let's explore more arithmetic operators!
 
-Considerando todos os filmes que ganharam o Oscar pelo menos uma vez, calcule o **desvio padrão**, o **maior valor**, o **menor valor** e a **média** da avaliações (campo `imdb.rating`).
+Considering all films that have won an Oscar at least once, calculate the **standard deviation**, the **highest value**, the **lowest value** and the **average** of the ratings (field `imdb .rating`).
 
-Dica: todos os filmes na coleção, que já ganharam um Oscar, começam com uma sequência de string parecida com essas abaixo, portanto `$regex` é um operador bem-vindo:
+Tip: All movies in the collection that have already won an Oscar start with a string sequence similar to the ones below, so `$regex` is a welcome operator:
 
 ```
 Won 10 Oscars
-Won 1 Oscar
+won 1 Oscar
 ```
 
-O resultado da sua query deve ter o seguinte formato:
+The result of your query should have the following format:
 
 ```javascript
 {
-  "maior_rating" : <maior_rating>,
-  "menor_rating" : <menor_rating>,
+  "highest_rating" : <highest_rating>,
+  "minor_rating" : <minor_rating>,
   "media_rating" : <media_rating>,
-  "desvio_padrao" : <desvio_padrao>
+  "standard_deviation" : <standard_deviation>
 }
 ```
 
-##### Desafio 7
+##### Challenge 7
 
-Vamos nos aprofundar um pouco mais em nossa coleção de filmes. Queremos contar quantos filmes cada um dos atores e atrizes do elenco (`cast`) já participou e obter uma média do campo `imdb.rating` para cada um desses atores e atrizes.
+Let's delve a little deeper into our movie collection. We want to count how many movies each of the actors and actresses in the cast (`cast`) have participated in and get an average of the `imdb.rating` field for each of these actors and actresses.
 
-Traga o nome do ator ou atriz, número de filmes em que participou e a média do imdb desses filmes com apenas uma casa decimal. Considere somente os membros do elenco de filmes com o idioma inglês (`English`).
+Bring the name of the actor or actress, the number of films in which he participated and the average of the imdb of these films with only one decimal place. Only consider cast members of English-language films (`English`).
 
-Sua query deve retornar `47055` documentos. Cada documento no resultado deve ter o seguinte formato:
+Your query should return `47055` documents. Each document in the output must have the following format:
 
 ```javascript
-{ "_id" : "John Wayne", "numeroFilmes" : 107, "mediaIMDB" : 6.4 }
+{ "_id" : "John Wayne", "numberMovies" : 107, "mediaIMDB" : 6.4 }
 ```
 
-##### Desafio 8
+##### Challenge 8
 
-Trocando de contexto, vamos utilizar nosso outro dataset que contém dados de empresas aéreas, suas rotas, seus voos e parcerias.
+Changing context, let's use our other dataset that contains data from airlines, their routes, their flights and partnerships.
 
-Liste todas as parcerias da coleção `air_alliances`, que voam rotas com um Boing 747 ou um Airbus A380 (que estão abreviados para `747` e `380` no campo `airplane` na coleção `air_routes`, respectivamente), e descubra qual delas tem o maior número de rotas com esses aviões.
+List all partnerships from the `air_alliances` collection, which fly routes with a Boeing 747 or an Airbus A380 (which are abbreviated to `747` and `380` in the `airplane` field in the `air_routes` collection, respectively), and find out which of them has the largest number of routes with these planes.
 
-O resultado da sua query deve ter o seguinte formato:
+The result of your query should have the following format:
 
 ```javascript
-{ "_id" : <nome_da_alianca>, "totalRotas" : <total_de_rotas> }
+{ "_id" : <alliance_name>, "totalRoutes" : <total_routes> }
 ```
 
-##### Desafio 9
+##### Challenge 9
 
-A partir da coleção `trips`, determine o menor e o maior ano de nascimento. Guarde essa informação, você precisará dela mais tarde.
+From the `trips` collection, determine the smallest and largest year of birth. Keep this information, you will need it later.
 
-Não considere documentos com valores vazios (`""`) ou em que o campo não existe!
+Do not consider documents with empty values ​​(`""`) or where the field does not exist!
 
-O resultado da sua query deve ter o seguinte formato:
+The result of your query should have the following format:
 
 ```javascript
-{ "maiorAnoNascimento" : <ano>, "menorAnoNascimento" : <ano> }
+{ "majorBirthYear" : <year>, "minorBirthYear" : <year> }
 ```
 
-##### Desafio 10
+##### Challenge 10
 
-Encontre a média de viagens por tipo de usuário. Exiba o valor em horas com apenas duas casas decimais.
+Find the average trips by user type. Display the value in hours with only two decimal places.
 
-O resultado da sua query deve ter o seguinte formato:
+The result of your query should have the following format:
 
 ```javascript
-{ "tipo" : <tipo>, "duracaoMedia" : <duracaoMedia> }
+{ "type" : <type>, "averageduration" : <averageduration> }
 // ...
 ```
 
-##### Desafio 11
+##### Challenge 11
 
-Determine qual o dia da semana com maior número de viagens iniciadas.
+Determine which day of the week has the highest number of trips initiated.
 
-Dica: Utilize o operador `$dayOfWeek` para extrair o dia da semana como um número de uma data.
+Tip: Use the `$dayOfWeek` operator to extract the day of the week as a number from a date.
 
-O resultado da sua query deve ter o seguinte formato:
+The result of your query should have the following format:
 
 ```javascript
-{ "diaDaSemana" : <dia_da_semana>, "total" : <total_de_viagens> }
+{ "weekday" : <weekday>, "total" : <travel_total> }
 ```
 
-##### Desafio 12
+##### Challenge 12
 
-Agora que você já sabe o dia com mais viagens, determine qual estação tem o maior número de viagens nesse dia da semana. Mas, para isso, adicione o que for necessário ao _pipeline_ anterior. Exiba apenas o nome da estação e o total de viagens.
+Now that you know the day with the most trips, determine which season has the most trips on that day of the week. But for that, add whatever you need to the previous _pipeline_. Display only the station name and total trips.
 
-O resultado da sua query deve ter o seguinte formato:
+The result of your query should have the following format:
 
 ```javascript
-{ "nomeEstacao" : <nome_da_estacao>, "total" : <total_de_viagens> }
+{ "stationname" : <station_name>, "total" : <travel_total> }
 ```
 
-##### Desafio 13
+##### Challenge 13
 
-Determine a duração média das viagens iniciadas no dia `10/03/2016`, em minutos. Arredonde o resultado para cima.
+Determine the average duration of trips starting on `10/03/2016`, in minutes. Round the result up.
 
-O resultado da sua query deve ter o seguinte formato:
+The result of your query should have the following format:
 
 ```javascript
-{ "duracaoMediaEmMinutos" : <duracao_media_em_minutos> }
+{ "average durationInMinutes" : <average_duration_in_minutes> }
 ```
 
-##### Desafio 14
+##### Challenge 14
 
-Baseado na duração média das viagens, determine quais são as `5` bicicletas que foram mais utilizadas. Exiba o resultado em minutos arredondados para cima.
+Based on the average duration of trips, determine which `5` bikes were used the most. Display the result in minutes rounded up.
 
-O resultado da sua query deve ter o seguinte formato:
+The result of your query should have the following format:
 
 ```javascript
-{ "bikeId" : <bike_id>, "duracaoMedia" : <duracao_media> }
-{ "bikeId" : <bike_id>, "duracaoMedia" : <duracao_media> }
-{ "bikeId" : <bike_id>, "duracaoMedia" : <duracao_media> }
-{ "bikeId" : <bike_id>, "duracaoMedia" : <duracao_media> }
-{ "bikeId" : <bike_id>, "duracaoMedia" : <duracao_media> }
+{ "bikeId" : <bike_id>, "average duration" : <average_duration> }
+{ "bikeId" : <bike_id>, "average duration" : <average_duration> }
+{ "bikeId" : <bike_id>, "average duration" : <average_duration> }
+{ "bikeId" : <bike_id>, "average duration" : <average_duration> }
+{ "bikeId" : <bike_id>, "average duration" : <average_duration> }
 ```
