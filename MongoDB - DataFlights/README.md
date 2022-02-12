@@ -1,123 +1,123 @@
-## Desafios
+## Challenges
 
-Monte queries para encontrar as informações dos desafios a seguir.
+Build queries to find the information for the following challenges.
 
-#### Desafio 1
+#### Challenge 1
 
-Retorne todos os bancos de dados da instância.
+Return all instance databases.
 
-#### Desafio 2
+#### Challenge 2
 
-Troque para o contexto do banco de dados `dataFlights` e exiba todas as coleções desse banco de dados.
+Switch to the `dataFlights` database context and display all collections from that database.
 
-#### Desafio 3
+#### Challenge 3
 
-Retorne a quantidade de documentos inseridos na coleção `voos`.
+Return the number of documents inserted in the `flights` collection.
 
-#### Desafio 4
+#### Challenge 4
 
-Retorne os 10 primeiros documentos com voos da empresa `AZUL`.
+Return the first 10 documents with flights from the company `AZUL`.
 
-#### Desafio 5
+#### Challenge 5
 
-Retorne a quantidade de voos da empresa `AZUL`.
+Return the number of flights of the company `AZUL`.
 
-#### Desafio 6
+#### Challenge 6
 
-Retorne a quantidade de voos da empresa `GOL`.
+Return the number of flights operated by `GOL`.
 
-#### Desafio 7
+#### Challenge 7
 
-Retorne o `vooId` do décimo ao décimo segundo documento da coleção `voos`.
+Return the `vooId` from the tenth to twelfth document of the `flights` collection.
 
-#### Desafio 8
+#### Challenge 8
 
-Retorne apenas os campos `empresa.sigla`, `empresa.nome` e `passageiros` do voo com o campo `vooId` igual a `756807`.
+Return only the `company.acronym`, `company.name` and `passengers` fields of the flight with the `flightId` field equal to `756807`.
 
-#### Desafio 9
+#### Challenge 9
 
-Retorne a quantidade de voos em que o ano seja menor do que `2017`.
+Return the number of flights where the year is less than `2017`.
 
-#### Desafio 10
+#### Challenge 10
 
-Retorne a quantidade de voos em que o ano seja maior do que `2016`.
+Return the number of flights where the year is greater than `2016`.
 
-#### Desafio 11
+#### Challenge 11
 
-Retorne a quantidade de voos entre os anos de `2017` e `2018`.
+Return the number of flights between the years `2017` and `2018`.
 
-#### Desafio 12
+#### Challenge 12
 
-Retorne apenas os **10** primeiros documentos com voos da empresa `GOL` do ano de `2017`. Exiba apenas os campos `vooId`, `empresa.nome`, `aeroportoOrigem.nome`, `aerportoDestino.nome`, `mes` e `ano`.
+Return only the **10** first documents with `GOL` company flights from the year `2017`. Display only the `flightId`, `company.name`, `Source Airport.name`, `DestinationAirport.name`, `month` and `year` fields.
 
-#### Desafio 13
+#### Challenge 13
 
-Retorne a quantidade de documentos em que o campo `aeroportoDestino.pais` não seja igual a `ESTADOS UNIDOS`.
+Return the number of documents in which the `AeroportoDestino.country` field is not equal to `UNITED STATES`.
 
-#### Desafio 14
+#### Challenge 14
 
-Utilizando os operadores lógicos, conte os documentos em que o campo `aeroportoDestino.pais` seja igual a `BRASIL`, `ARGENTINA` ou `CHILE`.
+Using the logical operators, count the documents in which the `aeroportoDestino.pais` field is equal to `BRASIL`, `ARGENTINA` or `CHILE`.
 
-#### Desafio 15
+#### Challenge 15
 
-Utilizando os operadores lógicos, conte os documentos em que o campos `aeroportoDestino.continente` não seja igual a `EUROPA`, `ÁSIA` e `OCEANIA`.
+Using the logical operators, count documents where the fields `aeroportoDestino.continente` are not equal to `EUROPE`, `ASIA` and `OCEANIA`.
 
-#### Desafio 16
+#### Challenge 16
 
-Retorne o total de voos em que o país de origem não seja `BRASIL`.
+Return the total number of flights where the country of origin is not `BRAZIL`.
 
-#### Desafio 17
+#### Challenge 17
 
-Retorne o total de voos com mais de 20 `decolagens`.
+Return total flights with more than 20 'takeoffs'.
 
-#### Desafio 18
+#### Challenge 18
 
-Retorne o total de voos em que o campo `natureza` possui o valor `Internacional`.
+Return the total number of flights where the `nature` field has the value `International`.
 
-#### Desafio 19
+#### Challenge 19
 
-Retorne o total de voos em que o campo `natureza` possui o valor `Doméstica`.
+Return the total number of flights where the `nature` field has the value `Domestic`.
 
-#### Desafio 20
+#### Challenge 20
 
-Retorne o `vooId`, `mes` e `ano` do primeiro voo com mais `7000` passageiros pagos.
+Return the `flightId`, `month` and `year` of the first flight with over `7000` paid passengers.
 
-#### Desafio 21
+#### Challenge 21
 
-Retorne o `vooId` do primeiro voo em que o campo `litrosCombustivel` exista.
+Return the `flightId` of the first flight where the `litersFuel` field exists.
 
-#### Desafio 22
+#### Challenge 22
 
-Retorne o `vooId` do primeiro voo em que o campo `rtk` não exista.
+Return the `flightId` of the first flight where the `rtk` field does not exist.
 
-#### Desafio 23
+#### Challenge 23
 
-Retorne o `vooId` do primeiro voo em que o campo `litrosCombustivel` seja maior ou igual a `1000`.
+Return the `flightId` of the first flight where the `litersFuel` field is greater than or equal to `1000`.
 
-#### Desafio 24
+#### Challenge 24
 
-Retorne o `vooId` do primeiro voo em que a empresa seja `DELTA AIRLINES` ou `AMERICAN AIRLINES`, a sigla do aeroporto de origem seja `SBGR` e a sigla do aeroporto de destino seja `KJFK`.
+Return the `flightId` of the first flight where the company is `DELTA AIRLINES` or `AMERICAN AIRLINES`, the origin airport abbreviation is `SBGR` and the destination airport abbreviation is `KJFK`.
 
-#### Desafio 25
+#### Challenge 25
 
-Retorne o `vooId` e `litrosCombustivel` do primeiro voo em que o campo `litrosCombustivel` **não seja maior do que** `1000` e o campo `litrosCombustivel` exista.
+Return the `flightId` and `LitersFuel` of the first flight where the `LitersFuel` field **is not greater than** `1000` and the `LitersFuel` field exists.
 
-#### Desafio 26
+#### Challenge 26
 
-Retorne o primeiro voo em que `litrosCombustivel` **não seja maior do que** `600` **e** a empresa **não seja** `GOL` **ou** `AZUL`, **e** o campo `litrosCombustivel` exista.
+Return the first flight where `litersFuel` **is not greater than** `600` **and** the company **is not** `GOL` **or** `BLUE`, **e* * the field `litersFuel` exists.
 
-#### Desafio 27
+#### Challenge 27
 
-Remova todos os voos da empresa `AZUL` em que a quantidade de combustível seja menor do que `400`. Informe a quantidade de documentos removidos.
+Remove all `BLUE` company flights where the amount of fuel is less than `400`. Enter the number of documents removed.
 
-#### Desafio 28
+#### Challenge 28
 
-Remova todos os voos da empresa `GOL` em que a quantidade de passageiros pagos esteja entre `5` e `10`, incluindo os casos em que a quantidade é `5` e `10`. Informe a quantidade de documentos removidos.
+Remove all `GOL` flights where the number of paid passengers is between `5` and `10`, including cases where the number is `5` and `10`. Enter the number of documents removed.
 
-#### Desafio 29
+#### Challenge 29
 
-Conte quantos voos da empresa `GOL` cujo campo `natureza` possua valor igual a `Doméstica` e insira na coleção `resumoVoos` um documento com os campos: `empresa` (nome da empresa) e `totalVoosDomesticos` (o total retornado anteriormente).
+Count how many flights of the company `GOL` whose `nature` field has a value equal to `Domestic` and insert in the `summaryFlights` collection a document with the fields: `company` (company name) and `totalVoosDomesticos` (the total returned previously ).
 
-#### Desafio 30
+#### Challenge 30
 
-Conte quantos voos da empresa `AZUL` com `natureza Doméstica` existem e insira na coleção `resumoVoos` um documento com os campos: `empresa` (nome da empresa) e `totalVoosDomesticos` (o total retornado anteriormente).
+Count how many flights of the company `AZUL` with `Domestic nature` exist and insert in the `summaryFlights` collection a document with the fields: `company` (company name) and `totalVoosDomesticos` (the total returned previously).
