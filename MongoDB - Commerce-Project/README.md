@@ -1,119 +1,119 @@
-## Desafios
+## Challenges
 
-Monte queries para encontrar as informações dos desafios a seguir.
+Build queries to find the information for the following challenges.
 
-##### Desafio 1
+##### Challenge 1
 
-Inclua o campo `criadoPor` em todos os documentos, colocando seu nome no valor desse campo.
+Include the `createdBy` field in all documents, putting your name in the value of this field.
 
-##### Desafio 2
+##### Challenge 2
 
-Inclua o campo `valorUnitario` em todos os documentos em que esse campo não existe e atribua a ele o valor `0.00`, com o tipo `NumberDecimal`.
+Include the `UnitValue` field in all documents where this field does not exist and assign it the value `0.00`, with the type `NumberDecimal`.
 
-##### Desafio 3
+##### Challenge 3
 
-Inclua o campo `avaliacao` do tipo `NumberInt` e com o valor `0` em todos os documentos da coleção.
+Include the `evaluation` field of type `NumberInt` and with the value `0` in all documents in the collection.
 
-##### Desafio 4
+##### Challenge 4
 
-Incremente o valor do campo `avaliacao` em `5` em todos os sanduíches de carne do tipo `bovino`. Dica: utilize como filtro o campo `tags`.
+Increase the value of the `evaluation` field by `5` in all `beef` meat sandwiches. Tip: use the `tags` field as a filter.
 
-##### Desafio 5
+##### Challenge 5
 
-Incremente o valor do campo `avaliacao` em `3` em todos os sanduíches de `ave`.
+Increment the value of the `evaluation` field by `3` in all `bird` sandwiches.
 
-##### Desafio 6
+##### Challenge 6
 
-Atribua o valor `16.90` ao campo `valorUnitario` e a data corrente ao campo `ultimaModificacao` no sanduíche `Big Mac`.
+Assign the value `16.90` to the `UnitValue` field and the current date to the `lastModified` field in the `Big Mac` sandwich.
 
-##### Desafio 7
+##### Challenge 7
 
-Adicione `ketchup` aos `ingredientes` para todos os sanduíches menos o `McChicken`, garantindo que não haja duplicidade nos `ingredientes`.
+Add `ketchup` to the `ingredients` for all sandwiches except `McChicken`, ensuring there is no duplicate `ingredient`.
 
-##### Desafio 8
+##### Challenge 8
 
-Inclua `bacon` no final da lista de `ingredientes` dos sanduíches `Big Mac` e `Quarteirão com Queijo`.
+Add `bacon` to the end of the `ingredients` list of the `Big Mac` and `Block with Cheese` sandwiches.
 
-##### Desafio 9
+##### Challenge 9
 
-Remova o item `cebola` de todos os sanduíches.
+Remove the 'onion' item from all sandwiches.
 
-##### Desafio 10
+##### Challenge 10
 
-Remova o primeiro `ingrediente` do sanduíche `Quarteirão com Queijo`.
+Remove the first `ingredient` from the `Quarterão com Queijo` sandwich.
 
-##### Desafio 11
+##### Challenge 11
 
-Remova o último `ingrediente` do sanduíche `Cheddar McMelt`.
+Remove the last `ingredient` from the `Cheddar McMelt` sandwich.
 
-##### Desafio 12
+##### Challenge 12
 
-Agora, vamos simular a quantidade de vendas dos sanduíches por dia da semana.
+Now, let's simulate the amount of sandwich sales per day of the week.
 
-Para isso, inclua um _array_ com sete posições em todos os sanduíches. Cada uma delas representará um dia da semana, e cada posição iniciará em 0. O _array_ deve se parecer como abaixo:
+To do this, include an _array_ with seven positions in all sandwiches. Each of them will represent a day of the week, and each position will start at 0. The _array_ should look like this:
 
 ```json
-"vendasPorDia": [0, 0, 0, 0, 0, 0, 0]
+"salesPerDay": [0, 0, 0, 0, 0, 0, 0]
 ```
 
-O primeiro item desse _array_ representa as vendas no Domingo, enquanto o último representa as vendas no Sábado. Tenha isso claro porque vamos utilizar essa sequência mais à frente.
+The first item in this _array_ represents Sunday sales, while the last item represents Saturday sales. Keep this in mind because we're going to use this sequence later on.
 
-##### Desafio 13
+##### Challenge 13
 
-Incremente as vendas de `Big Mac` às quartas-feiras em `60`.
+Increase `Big Mac` sales on Wednesdays by `60`.
 
-##### Desafio 14
+##### Challenge 14
 
-Incremente as vendas de todos os sanduíches de carne do tipo `bovino` e `pão` aos sábados em `120`.
+Increase sales of all `beef` and `bread` meat sandwiches on Saturdays by `120`.
 
-##### Desafio 15
+##### Challenge 15
 
-Insira os elementos `combo` e `tasty` no _array_ `tags` de todos os sanduíches e aproveite para deixar os elementos em ordem alfabética ascendente.
+Insert the `combo` and `tasty` elements into the _array_ `tags` of all sandwiches and take the opportunity to leave the elements in ascending alphabetical order.
 
-##### Desafio 16
+##### Challenge 16
 
-Ordene os elementos do _array_ `valoresNutricionais` pelo campo `percentual` de forma descendente. Dica: mesmo sem adicionar nenhum novo elemento, para essa operação é necessário utilizar também o modificador `$each`.
+Sort the elements of the _array_ `NutritionalValues` by the `percentage` field in descending order. Tip: even without adding any new element, for this operation it is also necessary to use the `$each` modifier.
 
-##### Desafio 17
+##### Challenge 17
 
-Adicione o elemento `muito sódio` ao _array_ `tags` nos produtos em que o `percentual` de `sódio` seja maior ou igual a `40`.
+Add the `too much sodium` element to the _array_ `tags` in products where the `percent` of `sodium` is greater than or equal to `40`.
 
-##### Desafio 18
+##### Challenge 18
 
-Adicione o elemento `contém sódio` ao _array_ `tags` nos produtos em que o `percentual` de `sódio` seja maior do que `20` e menor do que `40`.
+Add the `contains sodium` element to the _array_ `tags` in products where the `percent` of `sodium` is greater than `20` and less than `40`.
 
-##### Desafio 19
+##### Challenge 19
 
-Conte quantos produtos contêm `Mc` no nome, sem considerar letras maiúsculas ou minúsculas.
+Count how many products contain `Mc` in the name, regardless of uppercase or lowercase letters.
 
-##### Desafio 20
+##### Challenge 20
 
-Conte quantos produtos têm `4` ingredientes.
+Count how many products have `4` ingredients.
 
-##### Desafio 21
+##### Challenge 21
 
-Crie um índice do tipo `text` no campo `descricao` com o idioma padrão `portuguese`.
+Create an index of type `text` in the `description` field with the default language `portuguese`.
 
-##### Desafio 22
+##### Challenge 22
 
-Conte quantos documentos contêm as palavras `frango` e `hamburguer` utilizando o operador `$text`.
+Count how many documents contain the words `chicken` and `hamburger` using the `$text` operator.
 
-##### Desafio 23
+##### Challenge 23
 
-Conte quantos documentos contêm a expressão `feito com` utilizando o operador `$text`.
+Count how many documents contain the expression `made with` using the `$text` operator.
 
-##### Desafio 24
+##### Challenge 24
 
-Renomeie o campo `descricao` para `descricaoSite` em todos os documentos.
+Rename the `description` field to `Sitedescription` in all documents.
 
-##### Desafio 25
+##### Challenge 25
 
-Remova o campo `valorUnitario` do item `Big Mac`.
+Remove the `UnitValue` field from the `Big Mac` item.
 
-##### Desafio 26
+##### Challenge 26
 
-Retorne o nome dos sanduíches em que o número de `curtidas` é maior que o número de vendas.
+Return the name of the sandwiches where the number of `likes` is greater than the number of sales.
 
-##### Desafio 27
+##### Challenge 27
 
-Retorne o nome e a quantidade de vendas dos sanduíches em que o número de vendas é múltiplo de `5`.
+Return the name and sales quantity of sandwiches where the sales number is a multiple of `5`.
